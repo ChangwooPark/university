@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.MusicStore.Model">
+	<class name="Member" table="member">
+		<id name="member_idx" column="member_idx">
+			<generator class="native" />
+		</id>
+		<property name="id" column="id" />
+		<property name="pass" column="pass" />
+		<property name="name" column="name" />
+		<property name="address" column="address" />
+		<property name="e_mail" column="e_mail" />
+		<property name="phone" column="phone" />
+
+		<set name="comments" inverse="true" table="comment" cascade="all">
+			<key>
+				<column name="member_idx" />
+			</key>
+			<one-to-many class="Comment" />
+		</set>
+		<set name="playlists" inverse="true" table="playlist" cascade="all">
+			<key>
+				<column name="member_idx" />
+			</key>
+			<one-to-many class="Comment" />
+		</set>
+	</class>
+</hibernate-mapping>

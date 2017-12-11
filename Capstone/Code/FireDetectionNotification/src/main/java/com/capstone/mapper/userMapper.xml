@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.capstone.dao.userDAO">
+	<select id="SelectUser" resultType="Map">
+		SELECT user_id,user_pass FROM
+		user
+		WHERE user_id=#{ID} AND user_pass=#{PW}
+	</select>
+
+	<select id="SelectUserAll" resultType="Map">
+		select * from user;
+	</select>
+
+	<select id="SelectAdminUser" resultType="String">
+		select user_id from user
+		where idx = #{idx}
+	</select>
+
+	<select id="SelectAdminIdx" resultType="String">
+		select idx from user
+		where user_id = #{user_id}
+	</select>
+	<select id="SelectSession" resultType="Map">
+		select * from user
+		where
+		user_id = #{user_id}
+	</select>
+	<insert id="InsertUser">
+		insert into user (user_id, user_pass, user_phone)
+		values (#{user_id}, #{user_pass}, #{user_phone})
+	</insert>
+
+	<update id="UpdateUser">
+		update user set user_id = #{user_id}, user_pass =
+		#{user_pass}, user_phone = #{user_phone} where idx = #{idx}
+	</update>
+
+	<delete id="DeleteUser">
+		delete from user where idx = #{idx}
+	</delete>
+</mapper>

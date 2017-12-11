@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/MusicStore/Controller/HomeController.java=UTF-8
+encoding//src/main/java/com/MusicStore/Model/Music.java=UTF-8
+encoding//src/main/java/com/MusicStore/dao/MusicDAO.java=UTF-8
+encoding//src/main/java/com/MusicStore/daoImpl/MusicDAOImpl.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/Template/Footer.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/Template/Header.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/home.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/main/MainMusicStory.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/main/MainNewAlbum.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/main/MainTimeChart.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/search.jsp=UTF-8
+encoding/<project>=UTF-8

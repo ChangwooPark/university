@@ -1,0 +1,134 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+sourceCompatibility = '1.7'
+version = '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+project.ext {
+	springVersion = '4.0.3.RELEASE'
+	slf4jVersion = '1.7.5'
+}
+
+sourceSets {
+	main {
+		// default ���� build/classes/main, build/resources/main
+		output.classesDir = 'build/classes'
+		output.resourcesDir = 'build/classes'
+	}
+	test {
+		// default ���� build/classes/test, build/resources/test
+		output.classesDir = 'build/test-classes'
+		output.resourcesDir = 'build/test-classes'
+	}
+}
+
+//java �����Ͻ� ���ڵ� ����
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+dependencies {
+    //compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+    //testCompile group: 'junit', name: 'junit', version: '4.+'
+    compile "org.springframework:spring-aop:$springVersion",
+    			"org.springframework:spring-beans:$springVersion",
+    			"org.springframework:spring-context:$springVersion",
+    			"org.springframework:spring-core:$springVersion",
+    			"org.springframework:spring-web:$springVersion",
+    			"org.springframework:spring-webmvc:$springVersion",
+    			"org.springframework:spring-jdbc:$springVersion",
+    			"org.springframework:spring-orm:$springVersion",
+    			"org.springframework:spring-tx:$springVersion",
+    			"org.springframework:spring-oxm:$springVersion",
+    			"javax.validation:validation-api:1.0.0.GA", 
+    			"org.hibernate:hibernate-core:4.3.0.Final",
+    			"org.hibernate:hibernate-validator:4.3.0.Final",
+    			"org.aspectj:aspectjweaver:1.7.4", 	"org.aspectj:aspectjrt:1.7.4",
+    			"commons-lang:commons-lang:2.6", "commons-io:commons-io:2.4",
+    			"commons-fileupload:commons-fileupload:1.3", "javax.ws.rs:jsr311-api:1.1.1",
+    			"javax.servlet:jstl:1.2", "taglibs:standard:1.1.2", "org.slf4j:slf4j-api:$slf4jVersion",
+    			"org.slf4j:jcl-over-slf4j:$slf4jVersion", "org.slf4j:slf4j-log4j12:$slf4jVersion",
+    			"org.codehaus.jackson:jackson-core-asl:1.9.8",
+    			"org.codehaus.jackson:jackson-mapper-asl:1.9.8",
+    			"mysql:mysql-connector-java:5.1.31",
+    			"org.apache.tomcat:tomcat-dbcp:7.0.55"
+    providedCompile "javax.servlet:javax.servlet-api:3.0.1"
+    testCompile "org.springframework:spring-test:$springVersion", "junit:junit:4.+",
+    				 "com.sun.jersey:jersey-core:1.12", "com.sun.jersey:jersey-client:1.12",
+    				 "com.jayway.jsonpath:json-path-assert:0.8.1"
+}
+// ��� ���������� commons-logging�� ����
+[configurations.runtime, configurations.default]*.exclude(module: 'commons-logging')
+
+test {
+    //systemProperties 'property': 'value'
+    jvmArgs = ['-ea', '-Xmx256m']
+    logging.captureStandardOutput(LogLevel.INFO)
+    reports.html.enabled = true 
+}
+// src/main/java�� ��ġ�� non java������ output ���丮�� ����
+processResources {
+	from('src/main/java') {
+		exclude'**/*.java'
+	}
+	into 'build/classes'
+	includeEmptyDirs = true
+}
+
+processTestResources {
+	from('src/test/java') {
+		exclude '**/*.java'
+	}
+	into 'build/test-classes'
+	includeEmptyDirs = true
+}
+
+//�ʱ�ȭ
+task initProject(description: 'initialize project') << {
+	def createDir = {
+		println "create source directory: $it"
+		it.mkdirs()
+	}
+	sourceSets*.java.srcDirs*.each createDir
+	sourceSets*.resources.srcDirs*.each createDir
+	createDir webAppDir
+	createDir new File(webAppDir, '/WEB-INF')
+	createDir new File(webAppDir, '/resources')
+}
+
+eclipse{
+	classpath {
+		defaultOutputDir = file("build/classes")
+		
+		file {
+			whenMerged { cp ->
+				cp.entries.findAll { entry ->
+					entry.kind == 'src' && entry.path.startsWith("src/test/")
+				}*.output = "build/test-classes"
+			}
+		}
+	}
+	wtp {
+		component {
+			contextPath = "/"
+		}
+		
+	}
+}
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}

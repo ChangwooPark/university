@@ -1,0 +1,5 @@
+package com.capstone.service;
+
+public interface sensorService {
+
+}

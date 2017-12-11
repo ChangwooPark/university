@@ -1,0 +1,298 @@
+@charset "utf-8";
+/* CSS Document */
+.clear {
+	clear: both;
+	margin: 15px;
+}
+
+.nav {
+	width: 700px;
+}
+
+.end {
+	clear: both;
+	background-color: #59DA50;
+	width: 100%;
+	height: 45px;
+	text-align: center;
+}
+
+.Loginmenu {
+	float: right;
+	margin-top: 25px;
+	margin-right: 25px;
+}
+
+.Loginmenu input {
+	padding: 10px;
+}
+
+.Loginmenu a {
+	padding: 10px;
+}
+
+.Loginsub {
+	margin-top: 10px;
+	float: right;
+}
+
+.main {
+	height: 780px;
+}
+
+.MainFrame {
+	height: 900px;
+	width: 1000px;
+	border: 0;
+	margin-left: 70px;
+}
+
+section {
+	clear: both;
+	min-height: 550px;
+}
+
+.wrap {
+	width: 1100px;
+	margin: auto;
+	min-height: 700px;
+}
+
+section {
+	margin-top: 40px;
+}
+/* 최신앨범*/
+.NewAlbum {
+	float: left;
+	width: 55%;
+	height: 300px;
+}
+/* 실시간 차트 */
+.TimeChart {
+	margin-left: 70px;
+	list-style: none;
+	width: 30%;
+	height: 300px;
+}
+
+.TimeChart ul {
+	list-style: none;
+	overflow: auto;
+	list-style-type: none;
+	display: inline;
+}
+
+.TimeChart ul li {
+	list-style: none;
+	display: inline;
+}
+
+.TimeChart ul li a {
+	
+}
+
+/* 뮤직 스토리*/
+.MusicStory {
+	float: left;
+	margin-top: 20px;
+}
+
+header {
+	height: auto;
+}
+
+#Title {
+	margin-top: 40px;
+	margin-left: 60px;
+}
+
+.Login {
+	text-align: center;
+	margin: auto;
+	margin-top: 20%;
+}
+
+.title {
+	margin-top: 40px;
+	margin-left: 30px;
+}
+
+.title_hr {
+	width: 70%;
+	float: left;
+	color: #87cefa;
+	margin-left: 30px;
+}
+
+.Album {
+	margin: auto;
+	margin-top: 80px;
+}
+
+.AlbumPicture {
+	width: 65px;
+	height: 65px;
+}
+
+.newAlbum {
+	border: 1px solid #B2EBF4;
+	width: 800px;
+	float: center;
+	margin-left: 11%;
+	margin-top: 60px;
+}
+
+.newAlbumHeadBox {
+	width: 847px;
+	padding: 15px 0 0px 0;
+	background: no-repeat left top;
+}
+
+.newAlbumHeadBox h2 {
+	float: left;
+	width: 85px;
+	text-align: center;
+	margin: 5px;
+}
+
+.newAlbumHeadBox span.titT {
+	display: block;
+	float: left;
+	width: 610px;
+	line-height: 18px;
+	padding-top: 2px;
+	padding-left: 16px;
+	_padding-top: 2px;
+	color: #313b36;
+	font-size: 14px;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 5px;
+}
+
+.alBox1 {
+	float: center;
+	width: 600px;
+	padding: 3px 0 0 10px;
+	line-height: 16px;
+	font-size: 12px;
+	margin-bottom: 40px;
+}
+
+.alBox1 .title {
+	text-align: left;
+	margin-left: 20px;
+	width: 50px;
+}
+
+.alBox1 .value {
+	text-align: left;
+	margin-left: 30px;
+	font-weight: normal;
+}
+
+.albumdetail {
+	width: 800px;
+	margin-left: 11%;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.musicName {
+	text-decoration: none;
+	color: #4C4C4C;
+}
+
+.musicName:hover {
+	text-decoration: none;
+	color: #4C4C4C;
+}
+
+.musicName:visited {
+	text-decoration: none;
+	color: #4C4C4C;
+}
+
+.PlayListTitle {
+	vertical-align: middle;
+	display: inline;
+}
+
+.PlayListTitle1 {
+	vertical-align: middle;
+	display: inline;
+	margin-bottom: 35px;
+	padding-bottom: 35px;
+	margin-left: 0;
+}
+
+.playmusicdiv {
+	margin-bottom: 10px;
+}
+
+.playmusic {
+	
+}
+
+.PlayTable {
+	margin-top: 10px;
+	border: 1px solid #A6A6A6;
+	width: 300px;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 13px;
+	background: #FFFFFF;
+}
+
+.MainAlbumPicture {
+	width: 100px;
+	height: 100px;
+}
+
+.RealTime {
+	margin: auto;
+}
+
+.RealTime tr,td {
+	
+}
+
+.RealTime .title_intro {
+	padding-left: 40px;
+}
+
+.RealTime td a:hover {
+	color: #4C4C4C;
+}
+
+.RealTime td a:visited {
+	color: #4C4C4C;
+}
+
+.RealTime td a:linked {
+	color: #4C4C4C;
+}
+
+.RealTime td .artist_green {
+	color: #59DA50;
+}
+
+.RealTime td .album_color {
+	color: #9E9E9E;
+}
+
+.story {
+	text-decoration: none;
+	color: #4C4C4C;
+}
+
+.story:hover {
+	text-decoration: none;
+	color: #4C4C4C;
+}
+
+.story:visited {
+	text-decoration: none;
+	color: #4C4C4C;
+}

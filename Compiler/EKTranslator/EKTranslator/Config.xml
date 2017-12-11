@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <Language>C#</Language>
+  <NameSpace>IISPLParserGenerator</NameSpace>
+  <ScannerClassName>EKTranslatorScanner</ScannerClassName>
+  <ParserClassName>EKTranslatorParser</ParserClassName>
+</config>

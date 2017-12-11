@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.MusicStore.Model">
+	<class name="PlayList" table="playlist">
+		<id name="playlist_idx" column="playlist_idx">
+			<generator class="native" />
+		</id>
+		<many-to-one name="member" class="Member">
+			<column name="member_idx" not-null="true" />
+		</many-to-one>
+		<set name="musics" table="playlist_music" inverse="true" lazy="true"
+			fetch="select">
+			<key>
+				<column name="playlist_idx" not-null="true" />
+			</key>
+			<many-to-many class="com.MusicStore.Model.Music">
+				<column name="music_idx" not-null="true" />
+			</many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

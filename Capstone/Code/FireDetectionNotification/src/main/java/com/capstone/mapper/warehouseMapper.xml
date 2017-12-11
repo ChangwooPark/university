@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.capstone.dao.warehouseDAO">
+	<select id="warehouseSelectAll" resultType="Map">
+		select * from
+		warehouse;
+	</select>
+
+	<insert id="InsertWarehouse">
+		insert into warehouse ( adminidx, address, raspi_id,
+		name) values (#{adminidx}, #{address}, #{raspi_id}, #{name})
+	</insert>
+
+	<update id="UpdateWarehouse">
+		update warehouse set adminidx = #{adminidx}, address
+		= #{address}, raspi_id = #{raspi_id}, name = #{name} where idx =
+		#{idx}
+	</update>
+
+	<delete id="DeleteWarehouse">
+		delete from warehouse where idx = #{idx}
+	</delete>
+	<select id="warehouseAdmin" resultType="Map">
+		select * from warehouse
+		where warehouse.adminidx = #{idx};
+	</select>
+</mapper>

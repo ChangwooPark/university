@@ -1,0 +1,55 @@
+@CHARSET "EUC-KR";
+
+.div_sensor_cctv {
+	padding-top: 20px; width : 800px;
+	height: 400px;
+	text-align: center;
+	margin: 0 auto;
+	width: 800px;
+}
+
+.div_temperature {
+	padding-top: 20px;
+	margin: 0 auto;
+	text-align: center;
+	float: left;
+	margin-left: 50px;
+	display: inline;
+}
+
+.div_humidity {
+	padding-top: 20px;
+	margin: 0 auto;
+	text-align: center;
+	float: right;
+	margin-right: 50px;
+	display: inline;
+}
+
+.div_smoke {
+	padding-top: 20px;
+	margin-top: 25px;
+	margin: 0 auto;
+	text-align: center;
+	float: left;
+	margin-left: 50px;
+	display: inline;
+}
+
+.div_spark {
+	padding-top: 20px;
+	margin-top: 25px;
+	margin: 0 auto;
+	text-align: center;
+	float: right;
+	margin-right: 50px;
+	display: inline;
+}
+
+.div_NextLine {
+	display: block;
+}
+
+.div_height_change {
+	height: 1100px;
+}

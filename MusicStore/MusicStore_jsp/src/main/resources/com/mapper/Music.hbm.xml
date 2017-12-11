@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.MusicStore.Model">
+	<class name="Music" table="music">
+		<id name="music_idx" column="music_idx">
+			<generator class="native" />
+		</id>
+		<property name="name" column="name" />
+		<property name="artist" column="artist" />
+		<property name="regis_date" column="regis_date" />
+		<property name="genre" column="genre" />
+		<property name="hits" column="hits" />
+		<property name="album" column="album" />
+		<property name="picture" column="picture" />
+		<property name="music" column="music" />
+		<property name="video" column="video" />
+		<set name="comments" inverse="true" table="comment">
+			<key>
+				<column name="music_idx" not-null="true" />
+			</key>
+			<one-to-many class="Comment" />
+		</set>
+		<set name="playlists" table="playlist_music" inverse="false" lazy="true"
+			cascade="all" fetch="select">
+			<key>
+				<column name="music_idx" not-null="true" />
+			</key>
+			<many-to-many class="com.MusicStore.Model.PlayList">
+				<column name="playlist_idx" not-null="true" />
+			</many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

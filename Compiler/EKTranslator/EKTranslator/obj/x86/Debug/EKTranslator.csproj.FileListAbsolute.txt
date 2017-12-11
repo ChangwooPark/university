@@ -1,0 +1,6 @@
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\EKTranslator\EKTranslator\bin\Debug\EKTranslator.exe
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\EKTranslator\EKTranslator\bin\Debug\EKTranslator.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\EKTranslator\EKTranslator\bin\Debug\IISPLParGenDll6.0.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\EKTranslator\EKTranslator\obj\x86\Debug\EKTranslator.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\EKTranslator\EKTranslator\obj\x86\Debug\EKTranslator.exe
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\EKTranslator\EKTranslator\obj\x86\Debug\EKTranslator.pdb
